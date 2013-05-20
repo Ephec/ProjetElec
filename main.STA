@@ -1,6 +1,6 @@
 
-ROM used:   770 (2%)
-            770 (2%) including unused fragments
+ROM used:   774 (2%)
+            774 (2%) including unused fragments
 
             0 Average locations per line
             2 Average locations per statement
@@ -12,15 +12,15 @@ Stack used: 3/31 worst case (2 in main + 1 for interrupts)
 
 Lines Stmts  %   Files
 ----- ----- ---  -----
-  197    92  20  main.c
+  197    93  21  main.c
    13     0   0  main.h
   420     0   0  ..\..\..\..\..\Program Files\PICC\devices\18F458.h
   423     0   0  ..\..\..\..\..\Program Files\PICC\drivers\string.h
    32     0   0  ..\..\..\..\..\Program Files\PICC\drivers\stddef.h
    28     0   0  ..\..\..\..\..\Program Files\PICC\drivers\ctype.h
- 1351   359  80  ..\..\..\..\..\Program Files\PICC\drivers\stdlib.h
+ 1351   359  79  ..\..\..\..\..\Program Files\PICC\drivers\stdlib.h
 ----- -----
- 2464   451 Total
+ 2464   452 Total
 
 Page ROM  %  RAM   Vol Diff  Functions:
 ---- --- --- ---   --- ----  ----------
@@ -28,7 +28,7 @@ Page ROM  %  RAM   Vol Diff  Functions:
 0     14   1   0    24  1.5  RDA_isr
 0      4   0   0     3  0.0  lectureTrame
 0     84   5   1   149  1.3  johnson
-0    182  12   1   396  1.4  compteur
+0    186  12   1   423  1.4  compteur
 0     42   3   1    67  1.2  clignotement
 0     64   4   1   106  1.3  chenillard
 0    172  11   0   706  3.8  MAIN
@@ -36,12 +36,12 @@ Page ROM  %  RAM   Vol Diff  Functions:
 
 Program metrics:
     Functions               7
-    Statements              451
+    Statements              452
     Comments                622
-    Volume (V)              2072
+    Volume (V)              2107
     Difficulty (D)          11.7
-    Effort to implement (E) 24247
-    Time to implement (T)   22 minutes
+    Effort to implement (E) 24688
+    Time to implement (T)   23 minutes
     Est Delivered Bugs (B)  0
     Cyclomatic Complexity   4
     Maintainability (MI)    118
@@ -51,7 +51,7 @@ Program metrics:
 00000-00002     4  0  
 00004-00006     4  0  
 00008-000AC   166  0  
-000AE-07FFE   596  31998  
+000AE-07FFE   600  31994  
 
 
 
