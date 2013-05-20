@@ -48,7 +48,7 @@ void johnson(){
 
 void compteur(){
 
-   
+   Output_A(0b00000000);
 
    Output_A(0b00000010);
    delay_ms(500);
@@ -170,7 +170,7 @@ void main()
     //Setup_Oscillator parameter not selected from Intr Oscillotar Config tab
     //intitSerie(31);
 
-   set_tris_a(0b00101110);
+   set_tris_a(0b00101111);
    set_tris_c(0b11111101);
    Set_tris_D(0b11100000); // port D : Led
    

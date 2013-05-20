@@ -48,7 +48,7 @@ void johnson(){
 
 void compteur(){
 
-   Output_A(0b00000000);
+   Output_A(0b00000001);
 
    Output_A(0b00000010);
    delay_ms(500);

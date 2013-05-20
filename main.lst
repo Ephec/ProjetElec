@@ -1,17 +1,17 @@
-CCS PCH C Compiler, Version 4.140d, 1               20-mai-13 22:28
+CCS PCH C Compiler, Version 4.140d, 1               20-mai-13 22:32
 Compiler operating in Evaluation Mode
 To obtain a fully enabled compiler visit www.ccsinfo.com/products
 
                Filename:   C:\Documents and Settings\Antoine\Mes documents\GitHub\ProjetElec\main.lst
 
-               ROM used:   774 bytes (2%)
-                           Largest free fragment is 31994
+               ROM used:   776 bytes (2%)
+                           Largest free fragment is 31992
                RAM used:   51 (3%) at main() level
                            55 (4%) worst case
                Stack:     3 worst case (2 in main + 1 for interrupts)
 
 *
-0000:  GOTO   025A
+0000:  GOTO   025C
 *
 0008:  MOVWF  04
 000A:  MOVFF  FD8,05
@@ -2455,7 +2455,7 @@ To obtain a fully enabled compiler visit www.ccsinfo.com/products
 ....................  
 .................... } 
 *
-0004:  GOTO   02E2 (RETURN)
+0004:  GOTO   02E4 (RETURN)
 ....................  
 .................... void johnson(){ 
 ....................  
@@ -2512,125 +2512,126 @@ To obtain a fully enabled compiler visit www.ccsinfo.com/products
 ....................     
 ....................  
 .................... } 
-015C:  GOTO   02F2 (RETURN)
+015C:  GOTO   02F4 (RETURN)
 ....................  
 .................... void compteur(){ 
 ....................  
-....................    Output_A(0b00000000); 
+....................    Output_A(0b00000001); 
 0160:  CLRF   F92
-0162:  CLRF   F89
+0162:  MOVLW  01
+0164:  MOVWF  F89
 ....................  
 ....................    Output_A(0b00000010); 
-0164:  CLRF   F92
-0166:  MOVLW  02
-0168:  MOVWF  F89
+0166:  CLRF   F92
+0168:  MOVLW  02
+016A:  MOVWF  F89
 ....................    delay_ms(500); 
-016A:  MOVWF  33
-016C:  MOVLW  FA
-016E:  MOVWF  34
-0170:  RCALL  00BC
-0172:  DECFSZ 33,F
-0174:  BRA    016C
+016C:  MOVWF  33
+016E:  MOVLW  FA
+0170:  MOVWF  34
+0172:  RCALL  00BC
+0174:  DECFSZ 33,F
+0176:  BRA    016E
 ....................    Output_A(0b00000100); 
-0176:  CLRF   F92
-0178:  MOVLW  04
-017A:  MOVWF  F89
+0178:  CLRF   F92
+017A:  MOVLW  04
+017C:  MOVWF  F89
 ....................    delay_ms(500); 
-017C:  MOVLW  02
-017E:  MOVWF  33
-0180:  MOVLW  FA
-0182:  MOVWF  34
-0184:  RCALL  00BC
-0186:  DECFSZ 33,F
-0188:  BRA    0180
+017E:  MOVLW  02
+0180:  MOVWF  33
+0182:  MOVLW  FA
+0184:  MOVWF  34
+0186:  RCALL  00BC
+0188:  DECFSZ 33,F
+018A:  BRA    0182
 ....................    Output_A(0b00000110); 
-018A:  CLRF   F92
-018C:  MOVLW  06
-018E:  MOVWF  F89
+018C:  CLRF   F92
+018E:  MOVLW  06
+0190:  MOVWF  F89
 ....................    delay_ms(500); 
-0190:  MOVLW  02
-0192:  MOVWF  33
-0194:  MOVLW  FA
-0196:  MOVWF  34
-0198:  RCALL  00BC
-019A:  DECFSZ 33,F
-019C:  BRA    0194
+0192:  MOVLW  02
+0194:  MOVWF  33
+0196:  MOVLW  FA
+0198:  MOVWF  34
+019A:  RCALL  00BC
+019C:  DECFSZ 33,F
+019E:  BRA    0196
 ....................    Output_A(0b00001000); 
-019E:  CLRF   F92
-01A0:  MOVLW  08
-01A2:  MOVWF  F89
+01A0:  CLRF   F92
+01A2:  MOVLW  08
+01A4:  MOVWF  F89
 ....................    delay_ms(500); 
-01A4:  MOVLW  02
-01A6:  MOVWF  33
-01A8:  MOVLW  FA
-01AA:  MOVWF  34
-01AC:  RCALL  00BC
-01AE:  DECFSZ 33,F
-01B0:  BRA    01A8
+01A6:  MOVLW  02
+01A8:  MOVWF  33
+01AA:  MOVLW  FA
+01AC:  MOVWF  34
+01AE:  RCALL  00BC
+01B0:  DECFSZ 33,F
+01B2:  BRA    01AA
 ....................    Output_A(0b00001010); 
-01B2:  CLRF   F92
-01B4:  MOVLW  0A
-01B6:  MOVWF  F89
+01B4:  CLRF   F92
+01B6:  MOVLW  0A
+01B8:  MOVWF  F89
 ....................    delay_ms(500); 
-01B8:  MOVLW  02
-01BA:  MOVWF  33
-01BC:  MOVLW  FA
-01BE:  MOVWF  34
-01C0:  RCALL  00BC
-01C2:  DECFSZ 33,F
-01C4:  BRA    01BC
+01BA:  MOVLW  02
+01BC:  MOVWF  33
+01BE:  MOVLW  FA
+01C0:  MOVWF  34
+01C2:  RCALL  00BC
+01C4:  DECFSZ 33,F
+01C6:  BRA    01BE
 ....................    Output_A(0b00001100); 
-01C6:  CLRF   F92
-01C8:  MOVLW  0C
-01CA:  MOVWF  F89
+01C8:  CLRF   F92
+01CA:  MOVLW  0C
+01CC:  MOVWF  F89
 ....................    delay_ms(500); 
-01CC:  MOVLW  02
-01CE:  MOVWF  33
-01D0:  MOVLW  FA
-01D2:  MOVWF  34
-01D4:  RCALL  00BC
-01D6:  DECFSZ 33,F
-01D8:  BRA    01D0
+01CE:  MOVLW  02
+01D0:  MOVWF  33
+01D2:  MOVLW  FA
+01D4:  MOVWF  34
+01D6:  RCALL  00BC
+01D8:  DECFSZ 33,F
+01DA:  BRA    01D2
 ....................    Output_A(0b00001110); 
-01DA:  CLRF   F92
-01DC:  MOVLW  0E
-01DE:  MOVWF  F89
+01DC:  CLRF   F92
+01DE:  MOVLW  0E
+01E0:  MOVWF  F89
 ....................    delay_ms(500); 
-01E0:  MOVLW  02
-01E2:  MOVWF  33
-01E4:  MOVLW  FA
-01E6:  MOVWF  34
-01E8:  RCALL  00BC
-01EA:  DECFSZ 33,F
-01EC:  BRA    01E4
+01E2:  MOVLW  02
+01E4:  MOVWF  33
+01E6:  MOVLW  FA
+01E8:  MOVWF  34
+01EA:  RCALL  00BC
+01EC:  DECFSZ 33,F
+01EE:  BRA    01E6
 ....................    Output_A(0b00100000); 
-01EE:  CLRF   F92
-01F0:  MOVLW  20
-01F2:  MOVWF  F89
+01F0:  CLRF   F92
+01F2:  MOVLW  20
+01F4:  MOVWF  F89
 ....................    delay_ms(500); 
-01F4:  MOVLW  02
-01F6:  MOVWF  33
-01F8:  MOVLW  FA
-01FA:  MOVWF  34
-01FC:  RCALL  00BC
-01FE:  DECFSZ 33,F
-0200:  BRA    01F8
+01F6:  MOVLW  02
+01F8:  MOVWF  33
+01FA:  MOVLW  FA
+01FC:  MOVWF  34
+01FE:  RCALL  00BC
+0200:  DECFSZ 33,F
+0202:  BRA    01FA
 ....................    Output_A(0b00100010); 
-0202:  CLRF   F92
-0204:  MOVLW  22
-0206:  MOVWF  F89
+0204:  CLRF   F92
+0206:  MOVLW  22
+0208:  MOVWF  F89
 ....................    delay_ms(500); 
-0208:  MOVLW  02
-020A:  MOVWF  33
-020C:  MOVLW  FA
-020E:  MOVWF  34
-0210:  RCALL  00BC
-0212:  DECFSZ 33,F
-0214:  BRA    020C
+020A:  MOVLW  02
+020C:  MOVWF  33
+020E:  MOVLW  FA
+0210:  MOVWF  34
+0212:  RCALL  00BC
+0214:  DECFSZ 33,F
+0216:  BRA    020E
 ....................  
 ....................  
 .................... } 
-0216:  GOTO   02FA (RETURN)
+0218:  GOTO   02FC (RETURN)
 ....................  
 .................... void clignotement(){ 
 ....................  
@@ -2660,50 +2661,50 @@ To obtain a fully enabled compiler visit www.ccsinfo.com/products
 0106:  BRA    00FE
 ....................  
 .................... } 
-0108:  GOTO   02EA (RETURN)
+0108:  GOTO   02EC (RETURN)
 ....................  
 .................... void chenillard(){ 
 ....................  
 ....................    output_D(0b10000000); 
 *
-021A:  CLRF   F95
-021C:  MOVLW  80
-021E:  MOVWF  F8C
+021C:  CLRF   F95
+021E:  MOVLW  80
+0220:  MOVWF  F8C
 ....................    delay_ms(1000); 
-0220:  MOVLW  04
-0222:  MOVWF  33
-0224:  MOVLW  FA
-0226:  MOVWF  34
-0228:  RCALL  00BC
-022A:  DECFSZ 33,F
-022C:  BRA    0224
+0222:  MOVLW  04
+0224:  MOVWF  33
+0226:  MOVLW  FA
+0228:  MOVWF  34
+022A:  RCALL  00BC
+022C:  DECFSZ 33,F
+022E:  BRA    0226
 ....................    output_D(0b01000000); 
-022E:  CLRF   F95
-0230:  MOVLW  40
-0232:  MOVWF  F8C
+0230:  CLRF   F95
+0232:  MOVLW  40
+0234:  MOVWF  F8C
 ....................    delay_ms(1000); 
-0234:  MOVLW  04
-0236:  MOVWF  33
-0238:  MOVLW  FA
-023A:  MOVWF  34
-023C:  RCALL  00BC
-023E:  DECFSZ 33,F
-0240:  BRA    0238
+0236:  MOVLW  04
+0238:  MOVWF  33
+023A:  MOVLW  FA
+023C:  MOVWF  34
+023E:  RCALL  00BC
+0240:  DECFSZ 33,F
+0242:  BRA    023A
 ....................    output_D(0b00100000); 
-0242:  CLRF   F95
-0244:  MOVLW  20
-0246:  MOVWF  F8C
+0244:  CLRF   F95
+0246:  MOVLW  20
+0248:  MOVWF  F8C
 ....................    delay_ms(1000); 
-0248:  MOVLW  04
-024A:  MOVWF  33
-024C:  MOVLW  FA
-024E:  MOVWF  34
-0250:  RCALL  00BC
-0252:  DECFSZ 33,F
-0254:  BRA    024C
+024A:  MOVLW  04
+024C:  MOVWF  33
+024E:  MOVLW  FA
+0250:  MOVWF  34
+0252:  RCALL  00BC
+0254:  DECFSZ 33,F
+0256:  BRA    024E
 ....................  
 .................... } 
-0256:  GOTO   0302 (RETURN)
+0258:  GOTO   0304 (RETURN)
 .................... void afficheur(int valeur){ 
 .................... Set_tris_A(0b00011110); 
 ....................  
@@ -2762,137 +2763,137 @@ To obtain a fully enabled compiler visit www.ccsinfo.com/products
 ....................  
 .................... void main() 
 .................... { 
-025A:  CLRF   FF8
-025C:  BCF    FD0.7
-025E:  BSF    07.7
-0260:  CLRF   FEA
-0262:  CLRF   FE9
-0264:  MOVLW  81
-0266:  MOVWF  FAF
-0268:  MOVLW  A2
-026A:  MOVWF  FAC
-026C:  MOVLW  90
-026E:  MOVWF  FAB
-0270:  BSF    1F.0
-0272:  BSF    FC1.0
-0274:  BSF    FC1.1
-0276:  BSF    FC1.2
-0278:  BCF    FC1.3
-027A:  MOVLW  07
-027C:  MOVWF  FB4
-027E:  CLRF   19
-0280:  CLRF   1A
+025C:  CLRF   FF8
+025E:  BCF    FD0.7
+0260:  BSF    07.7
+0262:  CLRF   FEA
+0264:  CLRF   FE9
+0266:  MOVLW  81
+0268:  MOVWF  FAF
+026A:  MOVLW  A2
+026C:  MOVWF  FAC
+026E:  MOVLW  90
+0270:  MOVWF  FAB
+0272:  BSF    1F.0
+0274:  BSF    FC1.0
+0276:  BSF    FC1.1
+0278:  BSF    FC1.2
+027A:  BCF    FC1.3
+027C:  MOVLW  07
+027E:  MOVWF  FB4
+0280:  CLRF   19
+0282:  CLRF   1A
 ....................  
 ....................  
 ....................    setup_adc_ports(NO_ANALOGS); 
-0282:  BSF    FC1.0
-0284:  BSF    FC1.1
-0286:  BSF    FC1.2
-0288:  BCF    FC1.3
+0284:  BSF    FC1.0
+0286:  BSF    FC1.1
+0288:  BSF    FC1.2
+028A:  BCF    FC1.3
 ....................    setup_adc(ADC_OFF); 
-028A:  BCF    FC2.0
+028C:  BCF    FC2.0
 ....................    setup_psp(PSP_DISABLED); 
-028C:  BCF    F96.4
+028E:  BCF    F96.4
 ....................    setup_spi(SPI_SS_DISABLED); 
-028E:  BCF    FC6.5
-0290:  BCF    F94.5
-0292:  BSF    F94.4
-0294:  BCF    F94.3
-0296:  MOVLW  01
-0298:  MOVWF  FC6
-029A:  MOVLW  00
-029C:  MOVWF  FC7
+0290:  BCF    FC6.5
+0292:  BCF    F94.5
+0294:  BSF    F94.4
+0296:  BCF    F94.3
+0298:  MOVLW  01
+029A:  MOVWF  FC6
+029C:  MOVLW  00
+029E:  MOVWF  FC7
 ....................    setup_wdt(WDT_OFF); 
-029E:  BCF    FD1.0
+02A0:  BCF    FD1.0
 ....................    setup_timer_0(RTCC_INTERNAL); 
-02A0:  MOVLW  80
-02A2:  MOVWF  FD5
+02A2:  MOVLW  80
+02A4:  MOVWF  FD5
 ....................    setup_timer_1(T1_DISABLED); 
-02A4:  CLRF   FCD
+02A6:  CLRF   FCD
 ....................    setup_timer_2(T2_DISABLED,0,1); 
-02A6:  MOVLW  00
-02A8:  MOVWF  FCA
-02AA:  MOVLW  00
-02AC:  MOVWF  FCB
+02A8:  MOVLW  00
+02AA:  MOVWF  FCA
+02AC:  MOVLW  00
+02AE:  MOVWF  FCB
 ....................    setup_timer_3(T3_DISABLED|T3_DIV_BY_1); 
-02AE:  CLRF   FB1
+02B0:  CLRF   FB1
 ....................    setup_comparator(NC_NC_NC_NC); 
-02B0:  MOVLW  07
-02B2:  MOVWF  FB4
-02B4:  MOVF   F95,W
-02B6:  MOVWF  F95
-02B8:  MOVF   F96,W
-02BA:  MOVWF  F96
-02BC:  MOVLW  10
-02BE:  MOVWF  00
-02C0:  DECFSZ 00,F
-02C2:  BRA    02C0
-02C4:  NOP   
-02C6:  MOVF   FB4,W
-02C8:  BCF    FA1.6
+02B2:  MOVLW  07
+02B4:  MOVWF  FB4
+02B6:  MOVF   F95,W
+02B8:  MOVWF  F95
+02BA:  MOVF   F96,W
+02BC:  MOVWF  F96
+02BE:  MOVLW  10
+02C0:  MOVWF  00
+02C2:  DECFSZ 00,F
+02C4:  BRA    02C2
+02C6:  NOP   
+02C8:  MOVF   FB4,W
+02CA:  BCF    FA1.6
 ....................    setup_vref(FALSE); 
-02CA:  CLRF   FB5
+02CC:  CLRF   FB5
 ....................    enable_interrupts(INT_RDA); 
-02CC:  BSF    F9D.5
+02CE:  BSF    F9D.5
 ....................    enable_interrupts(GLOBAL); 
-02CE:  MOVLW  C0
-02D0:  IORWF  FF2,F
+02D0:  MOVLW  C0
+02D2:  IORWF  FF2,F
 ....................    setup_low_volt_detect(FALSE); 
-02D2:  CLRF   FD2
+02D4:  CLRF   FD2
 ....................  
 ....................  
 ....................     //Setup_Oscillator parameter not selected from Intr Oscillotar Config tab 
 ....................     //intitSerie(31); 
 ....................  
 ....................    set_tris_a(0b00101111); 
-02D4:  MOVLW  2F
-02D6:  MOVWF  F92
+02D6:  MOVLW  2F
+02D8:  MOVWF  F92
 ....................    set_tris_c(0b11111101); 
-02D8:  MOVLW  FD
-02DA:  MOVWF  F94
+02DA:  MOVLW  FD
+02DC:  MOVWF  F94
 ....................    Set_tris_D(0b11100000); // port D : Led 
-02DC:  MOVLW  E0
-02DE:  MOVWF  F95
+02DE:  MOVLW  E0
+02E0:  MOVWF  F95
 ....................     
 ....................    lectureTrame(); 
-02E0:  BRA    0004
+02E2:  BRA    0004
 ....................     
 ....................    while(true){ 
 ....................     
 ....................          if(truc=='c'){ 
-02E2:  MOVF   32,W
-02E4:  SUBLW  63
-02E6:  BNZ   02EA
+02E4:  MOVF   32,W
+02E6:  SUBLW  63
+02E8:  BNZ   02EC
 ....................          clignotement(); 
-02E8:  BRA    00E2
+02EA:  BRA    00E2
 ....................          } 
 ....................          if(truc=='j'){ 
-02EA:  MOVF   32,W
-02EC:  SUBLW  6A
-02EE:  BNZ   02F2
+02EC:  MOVF   32,W
+02EE:  SUBLW  6A
+02F0:  BNZ   02F4
 ....................          johnson(); 
-02F0:  BRA    010C
+02F2:  BRA    010C
 ....................          } 
 ....................          if(truc=='t'){ 
-02F2:  MOVF   32,W
-02F4:  SUBLW  74
-02F6:  BNZ   02FA
+02F4:  MOVF   32,W
+02F6:  SUBLW  74
+02F8:  BNZ   02FC
 ....................          compteur(); 
-02F8:  BRA    0160
+02FA:  BRA    0160
 ....................          } 
 ....................          if(truc=='h'){ 
-02FA:  MOVF   32,W
-02FC:  SUBLW  68
-02FE:  BNZ   0302
+02FC:  MOVF   32,W
+02FE:  SUBLW  68
+0300:  BNZ   0304
 ....................          chenillard(); 
-0300:  BRA    021A
+0302:  BRA    021C
 ....................          } 
 ....................        
 ....................    } 
-0302:  BRA    02E2
+0304:  BRA    02E4
 .................... } 
 ....................  
-0304:  SLEEP 
+0306:  SLEEP 
 
 Configuration Fuses:
    Word  1: 2700   RC_IO NOOSCSEN

@@ -72,10 +72,10 @@ ROM Allocation:
 00010C  johnson
 000160  compteur
 0000E2  clignotement
-00021A  chenillard
-00025A  MAIN
-00025A  @cinit1
-00027E  @cinit2
+00021C  chenillard
+00025C  MAIN
+00025C  @cinit1
+000280  @cinit2
 0136  StrtoulGO
 0136  StrtolGO
 
@@ -83,7 +83,7 @@ Project Directory:
     C:\Documents and Settings\Antoine\Mes documents\GitHub\ProjetElec\
 
 Project Files:
-    main.c                                                  [20-mai-13 22:28  CRC=7C3D2415]
+    main.c                                                  [20-mai-13 22:32  CRC=7C3D2415]
     main.h                                                  [20-mai-13 22:06  CRC=053EFE05]
     ..\..\..\..\..\Program Files\PICC\devices\18F458.h      [02-déc.-12 10:38  CRC=1CC1CAD0]
     ..\..\..\..\..\Program Files\PICC\drivers\string.h      [14-juil.-11 10:13  CRC=23EDEC8F]
