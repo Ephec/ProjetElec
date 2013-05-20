@@ -1,0 +1,9 @@
+>>> Warning 202 "main.c" Line 11(5,8): Variable never used:   cpt
+>>> Warning 202 "main.c" Line 12(6,7): Variable never used:   c
+>>> Warning 202 "main.c" Line 14(6,14): Variable never used:   fonction
+>>> Warning 202 "main.c" Line 15(6,11): Variable never used:   choix
+>>> Warning 202 "main.c" Line 17(6,10): Variable never used:   test
+>>> Warning 202 "main.c" Line 18(6,15): Variable never used:   reception
+      Memory usage:   ROM=2%      RAM=3% - 4%
+      0 Errors,  6 Warnings.
+Build Successful.

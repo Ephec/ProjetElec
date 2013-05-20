@@ -1,0 +1,144 @@
+#include <main.h>
+#include <string.h>
+#include <stdlib.h>
+
+#define START 0x3A
+#define END 0x0D
+#byte  portb = 0xf81
+
+char trame[8];
+char fonction[2];
+char test;
+
+#int_RDA
+void  RDA_isr(void){
+
+   int i;
+
+   test=getc();
+}
+
+
+void lectureTrame(){
+
+    test=trame[0];
+    
+    int i;
+    
+    for(i=0;i<8;i++){
+    
+      trame[i]=0;
+    
+    }
+
+}
+
+void johnson(){
+
+   Output_D(0b10000000);
+   delay_ms(500);
+   Output_D(0b11000000);
+   delay_ms(500);
+   Output_D(0b01100000);
+   delay_ms(500);
+   Output_D(0b00100000);
+   delay_ms(500);
+
+}
+
+void compteur(){
+
+   Output_A(0b00000010);
+   delay_ms(500);
+   Output_A(0b00000100);
+   delay_ms(500);
+   Output_A(0b00000110);
+   delay_ms(500);
+   Output_A(0b00001000);
+   delay_ms(500);
+   Output_A(0b00001010);
+   delay_ms(500);
+   Output_A(0b00001100);
+   delay_ms(500);
+   Output_A(0b00001110);
+   delay_ms(500);
+   Output_A(0b00010000);
+   delay_ms(500);
+   Output_A(0b00010010);
+   delay_ms(500);
+
+
+}
+
+void clignotement(){
+
+    Output_D(0b00000000) ; // O
+    delay_ms(1000);
+    Output_D(0b11100000) ; // 1
+    delay_ms(1000);
+
+}
+
+void chenillard(){
+
+   output_D(0b10000000);
+   delay_ms(1000);
+   output_D(0b01000000);
+   delay_ms(1000);
+   output_D(0b00100000);
+   delay_ms(1000);
+
+}
+
+
+void main()
+{
+
+
+   setup_adc_ports(NO_ANALOGS);
+   setup_adc(ADC_OFF);
+   setup_psp(PSP_DISABLED);
+   setup_spi(SPI_SS_DISABLED);
+   setup_wdt(WDT_OFF);
+   setup_timer_0(RTCC_INTERNAL);
+   setup_timer_1(T1_DISABLED);
+   setup_timer_2(T2_DISABLED,0,1);
+   setup_timer_3(T3_DISABLED|T3_DIV_BY_1);
+   setup_comparator(NC_NC_NC_NC);
+   setup_vref(FALSE);
+   enable_interrupts(INT_RDA);
+   enable_interrupts(GLOBAL);
+   setup_low_volt_detect(FALSE);
+
+
+    //Setup_Oscillator parameter not selected from Intr Oscillotar Config tab
+    //intitSerie(31);
+
+   set_tris_c(0b11111101);
+   Set_tris_D(0b11100000); // port D : Led
+   
+   //lectureTrame();
+   
+   while(true){
+         
+         if(test='C'){
+         clignotement();
+         }
+         
+         
+         if(test='J'){
+         johnson();
+         }
+         
+         
+         if(test='T'){
+         compteur();
+         }
+         
+         
+         if(test='H'){
+         chenillard();
+         }
+      
+   }
+}
