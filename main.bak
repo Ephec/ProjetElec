@@ -1,35 +1,33 @@
 #include <main.h>
 #include <string.h>
 #include <stdlib.h>
+int1 flag = 1;
 
 #define START 0x3A
 #define END 0x0D
 #byte  portb = 0xf81
 
 char trame[8];
+int cpt;
+char c;
+char arg[2];
 char fonction[2];
+char choix[2];
+
 char test;
+char reception;
+int truc;
 
 #int_RDA
 void  RDA_isr(void){
 
-   int i;
-
-   test=getc();
+   truc=getc();
 }
 
 
 void lectureTrame(){
 
-    test=trame[0];
     
-    int i;
-    
-    for(i=0;i<8;i++){
-    
-      trame[i]=0;
-    
-    }
 
 }
 
@@ -43,6 +41,8 @@ void johnson(){
    delay_ms(500);
    Output_D(0b00100000);
    delay_ms(500);
+   
+   
 
 }
 
@@ -89,6 +89,60 @@ void chenillard(){
    delay_ms(1000);
 
 }
+void afficheur(int valeur){
+Set_tris_A(0b00011110);
+
+if(valeur<10 && valeur >=0)
+{
+  output_high(PIN_A1);
+  valeur = valeur << 1;
+  while(flag){
+  output_A(valeur);
+  }
+}
+}
+
+void conversion(int1 trame[8], int8 nb)
+{
+int i;
+for (i = 0; i<=7 ;i++){
+   trame[i] = nb % 2;
+   nb = nb >> 1;
+}
+
+}
+
+int convertcharInt( char arg[2]){
+
+return (atoi(arg[0])*10)+atoi(arg[1]);
+
+}
+void obtenirTrame (int1 trame[8]){
+}
+
+
+
+
+
+int1 lrc8(int1 trame[8],int1 parite )// dans ce cas si je ne vais m'occupé que d'un parité paire return 1 si trame OK
+{
+int i;
+int cpt1 = 0; // On va compter le nomvre de 1
+for (i=0;i<=7;i++)
+   if (trame[i]) cpt1++; // Si c'est un 1 on l'incrémente
+if (cpt1%2 == parite) // si divisible par 2 alors ca donnera 0 et le bit de parite doit etre egale a 0 sinon si il n'est pas divisible ca va donner un 1 et da parite doit etre egame a 1
+   return 1;
+return 0;
+}
+int1 CreationLRC8(int1 trame[8]) // renvoyer la valeur du bit de parité
+{
+int i;
+int cpt1 = 0; // On va compter le nomvre de 1
+for (i=0;i<=7;i++)
+   if (trame[i]) cpt1++; // Si c'est un 1 on l'incrémente
+return cpt1%2;
+
+}
 
 
 void main()
@@ -117,28 +171,23 @@ void main()
    set_tris_c(0b11111101);
    Set_tris_D(0b11100000); // port D : Led
    
-   //lectureTrame();
+   lectureTrame();
    
    while(true){
-         
-         if(test='C'){
+   
+         if(truc=='c'){
          clignotement();
          }
-         
-         
-         if(test='J'){
+         if(truc=='j'){
          johnson();
          }
-         
-         
-         if(test='T'){
+         if(truc=='t'){
          compteur();
          }
-         
-         
-         if(test='H'){
+         if(truc=='h'){
          chenillard();
          }
       
    }
 }
+

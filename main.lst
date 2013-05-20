@@ -1,4 +1,4 @@
-CCS PCH C Compiler, Version 4.140d, 1               20-mai-13 22:07
+CCS PCH C Compiler, Version 4.140d, 1               20-mai-13 22:10
 Compiler operating in Evaluation Mode
 To obtain a fully enabled compiler visit www.ccsinfo.com/products
 
@@ -2434,7 +2434,7 @@ To obtain a fully enabled compiler visit www.ccsinfo.com/products
 ....................  
 .................... char test; 
 .................... char reception; 
-.................... int truc; 
+.................... char truc; 
 ....................  
 .................... #int_RDA 
 .................... void  RDA_isr(void){ 

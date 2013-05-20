@@ -16,7 +16,7 @@ char choix[2];
 
 char test;
 char reception;
-int truc;
+char truc;
 
 #int_RDA
 void  RDA_isr(void){
