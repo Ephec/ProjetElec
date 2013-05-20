@@ -1,4 +1,4 @@
-CCS PCH C Compiler, Version 4.140d, 1               20-mai-13 22:10
+CCS PCH C Compiler, Version 4.140d, 1               20-mai-13 22:15
 Compiler operating in Evaluation Mode
 To obtain a fully enabled compiler visit www.ccsinfo.com/products
 
@@ -2843,8 +2843,8 @@ To obtain a fully enabled compiler visit www.ccsinfo.com/products
 ....................    set_tris_c(0b11111101); 
 02D0:  MOVLW  FD
 02D2:  MOVWF  F94
-....................    Set_tris_D(0b11100000); // port D : Led 
-02D4:  MOVLW  E0
+....................    Set_tris_D(0b00000000); // port D : Led 
+02D4:  MOVLW  00
 02D6:  MOVWF  F95
 ....................     
 ....................    lectureTrame(); 

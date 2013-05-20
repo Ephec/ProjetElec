@@ -169,7 +169,7 @@ void main()
     //intitSerie(31);
 
    set_tris_c(0b11111101);
-   Set_tris_D(0b11100000); // port D : Led
+   Set_tris_D(0b00000000); // port D : Led
    
    lectureTrame();
    
