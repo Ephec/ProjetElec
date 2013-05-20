@@ -1,11 +1,11 @@
-CCS PCH C Compiler, Version 4.140d, 1               20-mai-13 22:15
+CCS PCH C Compiler, Version 4.140d, 1               20-mai-13 22:21
 Compiler operating in Evaluation Mode
 To obtain a fully enabled compiler visit www.ccsinfo.com/products
 
                Filename:   C:\Documents and Settings\Antoine\Mes documents\GitHub\ProjetElec\main.lst
 
-               ROM used:   766 bytes (2%)
-                           Largest free fragment is 32002
+               ROM used:   770 bytes (2%)
+                           Largest free fragment is 31998
                RAM used:   51 (3%) at main() level
                            55 (4%) worst case
                Stack:     3 worst case (2 in main + 1 for interrupts)
@@ -2455,7 +2455,7 @@ To obtain a fully enabled compiler visit www.ccsinfo.com/products
 ....................  
 .................... } 
 *
-0004:  GOTO   02DA (RETURN)
+0004:  GOTO   02DE (RETURN)
 ....................  
 .................... void johnson(){ 
 ....................  
@@ -2512,9 +2512,11 @@ To obtain a fully enabled compiler visit www.ccsinfo.com/products
 ....................     
 ....................  
 .................... } 
-015C:  GOTO   02EA (RETURN)
+015C:  GOTO   02EE (RETURN)
 ....................  
 .................... void compteur(){ 
+....................  
+....................     
 ....................  
 ....................    Output_A(0b00000010); 
 0160:  CLRF   F92
@@ -2626,7 +2628,7 @@ To obtain a fully enabled compiler visit www.ccsinfo.com/products
 ....................  
 ....................  
 .................... } 
-0212:  GOTO   02F2 (RETURN)
+0212:  GOTO   02F6 (RETURN)
 ....................  
 .................... void clignotement(){ 
 ....................  
@@ -2656,7 +2658,7 @@ To obtain a fully enabled compiler visit www.ccsinfo.com/products
 0106:  BRA    00FE
 ....................  
 .................... } 
-0108:  GOTO   02E2 (RETURN)
+0108:  GOTO   02E6 (RETURN)
 ....................  
 .................... void chenillard(){ 
 ....................  
@@ -2699,7 +2701,7 @@ To obtain a fully enabled compiler visit www.ccsinfo.com/products
 0250:  BRA    0248
 ....................  
 .................... } 
-0252:  GOTO   02FA (RETURN)
+0252:  GOTO   02FE (RETURN)
 .................... void afficheur(int valeur){ 
 .................... Set_tris_A(0b00011110); 
 ....................  
@@ -2840,52 +2842,55 @@ To obtain a fully enabled compiler visit www.ccsinfo.com/products
 ....................     //Setup_Oscillator parameter not selected from Intr Oscillotar Config tab 
 ....................     //intitSerie(31); 
 ....................  
+....................    set_tris_a(0b00011110); 
+02D0:  MOVLW  1E
+02D2:  MOVWF  F92
 ....................    set_tris_c(0b11111101); 
-02D0:  MOVLW  FD
-02D2:  MOVWF  F94
-....................    Set_tris_D(0b00000000); // port D : Led 
-02D4:  MOVLW  00
-02D6:  MOVWF  F95
+02D4:  MOVLW  FD
+02D6:  MOVWF  F94
+....................    Set_tris_D(0b11100000); // port D : Led 
+02D8:  MOVLW  E0
+02DA:  MOVWF  F95
 ....................     
 ....................    lectureTrame(); 
-02D8:  BRA    0004
+02DC:  BRA    0004
 ....................     
 ....................    while(true){ 
 ....................     
 ....................          if(truc=='c'){ 
-02DA:  MOVF   32,W
-02DC:  SUBLW  63
-02DE:  BNZ   02E2
+02DE:  MOVF   32,W
+02E0:  SUBLW  63
+02E2:  BNZ   02E6
 ....................          clignotement(); 
-02E0:  BRA    00E2
+02E4:  BRA    00E2
 ....................          } 
 ....................          if(truc=='j'){ 
-02E2:  MOVF   32,W
-02E4:  SUBLW  6A
-02E6:  BNZ   02EA
+02E6:  MOVF   32,W
+02E8:  SUBLW  6A
+02EA:  BNZ   02EE
 ....................          johnson(); 
-02E8:  BRA    010C
+02EC:  BRA    010C
 ....................          } 
 ....................          if(truc=='t'){ 
-02EA:  MOVF   32,W
-02EC:  SUBLW  74
-02EE:  BNZ   02F2
+02EE:  MOVF   32,W
+02F0:  SUBLW  74
+02F2:  BNZ   02F6
 ....................          compteur(); 
-02F0:  BRA    0160
+02F4:  BRA    0160
 ....................          } 
 ....................          if(truc=='h'){ 
-02F2:  MOVF   32,W
-02F4:  SUBLW  68
-02F6:  BNZ   02FA
+02F6:  MOVF   32,W
+02F8:  SUBLW  68
+02FA:  BNZ   02FE
 ....................          chenillard(); 
-02F8:  BRA    0216
+02FC:  BRA    0216
 ....................          } 
 ....................        
 ....................    } 
-02FA:  BRA    02DA
+02FE:  BRA    02DE
 .................... } 
 ....................  
-02FC:  SLEEP 
+0300:  SLEEP 
 
 Configuration Fuses:
    Word  1: 2700   RC_IO NOOSCSEN
