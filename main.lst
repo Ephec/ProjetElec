@@ -1,4 +1,4 @@
-CCS PCH C Compiler, Version 4.140d, 1               20-mai-13 22:21
+CCS PCH C Compiler, Version 4.140d, 1               20-mai-13 22:25
 Compiler operating in Evaluation Mode
 To obtain a fully enabled compiler visit www.ccsinfo.com/products
 
@@ -2601,9 +2601,9 @@ To obtain a fully enabled compiler visit www.ccsinfo.com/products
 01E4:  RCALL  00BC
 01E6:  DECFSZ 33,F
 01E8:  BRA    01E0
-....................    Output_A(0b00010000); 
+....................    Output_A(0b00100000); 
 01EA:  CLRF   F92
-01EC:  MOVLW  10
+01EC:  MOVLW  20
 01EE:  MOVWF  F89
 ....................    delay_ms(500); 
 01F0:  MOVLW  02
@@ -2613,9 +2613,9 @@ To obtain a fully enabled compiler visit www.ccsinfo.com/products
 01F8:  RCALL  00BC
 01FA:  DECFSZ 33,F
 01FC:  BRA    01F4
-....................    Output_A(0b00010010); 
+....................    Output_A(0b00100010); 
 01FE:  CLRF   F92
-0200:  MOVLW  12
+0200:  MOVLW  22
 0202:  MOVWF  F89
 ....................    delay_ms(500); 
 0204:  MOVLW  02
@@ -2842,8 +2842,8 @@ To obtain a fully enabled compiler visit www.ccsinfo.com/products
 ....................     //Setup_Oscillator parameter not selected from Intr Oscillotar Config tab 
 ....................     //intitSerie(31); 
 ....................  
-....................    set_tris_a(0b00011110); 
-02D0:  MOVLW  1E
+....................    set_tris_a(0b00101110); 
+02D0:  MOVLW  2E
 02D2:  MOVWF  F92
 ....................    set_tris_c(0b11111101); 
 02D4:  MOVLW  FD
